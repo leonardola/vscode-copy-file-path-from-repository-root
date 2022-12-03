@@ -1,0 +1,79 @@
+{
+  "name": "copy-file-path-from-repository-root",
+  "displayName": "Copy file path from repository root",
+  "description": "",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:copy-file-path-from-repository-root.copyRelativePathFromRepositoryRoot"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copy-file-path-from-repository-root.copyRelativePathFromRepositoryRoot",
+        "title": "Copy Relative Path From Repository Root"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "true == true",
+          "command": "copy-file-path-from-repository-root.copyRelativePathFromRepositoryRoot",
+          "group": "YourGroup@1"
+        }
+      ],
+      "editor/context": [
+        {
+          "when": "true == true",
+          "command": "copy-file-path-from-repository-root.copyRelativePathFromRepositoryRoot",
+          "group": "YourGroup@1"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "when": "true == true",
+          "command": "copy-file-path-from-repository-root.copyRelativePathFromRepositoryRoot",
+          "group": "YourGroup@1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p .",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.73.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "@vscode/test-electron": "^2.2.0",
+    "esbuild": "^0.15.16",
+    "eslint": "^8.26.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.8.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  },
+  "dependencies": {
+    "copy-paste": "^1.3.0"
+  }
+}

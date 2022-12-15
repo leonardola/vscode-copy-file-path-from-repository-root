@@ -12,4 +12,5 @@ Initial release. Create support to copy file path relative to the repository roo
 Added icon
 
 ## Whant to use?
-Just download the vsix file from the release folder and go to VSCode > Extensions > Three dots > Install from VSIX
+[Download from the marketplace](https://marketplace.visualstudio.com/items?itemName=leonardola.copy-file-path-from-repository-root)
+or download the vsix file from the release folder and go to VSCode > Extensions > Three dots > Install from VSIX

@@ -24,3 +24,7 @@ Added icon.
 ### 1.0.2
 
 Updated readme.
+
+### 1.0.3
+
+Added line to the path.

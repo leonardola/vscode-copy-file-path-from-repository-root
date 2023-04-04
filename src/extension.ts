@@ -9,8 +9,12 @@ var copy = require('copy-paste').copy;
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('copy-file-path-from-repository-root.copyRelativePathFromRepositoryRoot', (uri) => {
+		let line = '';
+
 		if (typeof uri === 'undefined') {
 			if (vscode.window.activeTextEditor) {
+				line = vscode.window.activeTextEditor.selection.active.line ;
+				line = line ? line + 1 : 0;
 				uri = vscode.window.activeTextEditor.document.uri;
 			}
 		}
@@ -51,7 +55,7 @@ export function activate(context: vscode.ExtensionContext) {
 			fileDir !== workspaceRoot
 		);
 		
-		let relativePath = uri.fsPath;
+		let relativePath = uri.fsPath + (line ? ":" + line : '');
 
 		if (!found){ 
 			relativePath = relativePath.replace(workspaceRoot + "/",'');

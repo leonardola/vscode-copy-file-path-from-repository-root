@@ -2,7 +2,7 @@
   "name": "copy-file-path-from-repository-root",
   "displayName": "Copy file path from repository root",
   "description": "",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Leonardo Lopes de Albuquerque",
   "publisher": "leonardola",
   "icon": "images/icon.png",
